@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berbagi Diamond Free Fire Gratis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Mencegah scroll */
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Berbagi Diamond Free Fire Gratis</h1>
+        <form id="diamondForm">
+            <label for="ff_id">ID Free Fire</label>
+            <input type="number" id="ff_id" name="ff_id" placeholder="Masukkan ID Free Fire" required>
+            
+            <label for="ff_dm">Jumlah Diamond</label>
+            <select id="ff_dm" name="ff_dm" required>
+                <option value="10">10 Diamond</option>
+                <option value="12">12 Diamond</option>
+                <option value="55">55 Diamond</option>
+            </select>
+
+            <button type="submit">Dapatkan Diamond</button>
+        </form>
+    </div>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script>
+        document.getElementById('diamondForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form submit secara default
+
+            var ffId = document.getElementById('ff_id').value;
+            var ffDm = document.getElementById('ff_dm').value;
+
+            // Tampilkan SweetAlert2
+            Swal.fire({
+                title: 'Mau Diamond tapi udah berteman atau belum?',
+                text: `ID Free Fire: ${ffId}\nJumlah Diamond: ${ffDm}`,
+                icon: 'question',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    var message = "ID Free Fire: " + ffId + ";" + "\nJumlah Diamond: " + ffDm;
+                    var waUrl = "https://wa.me/6285328736706?text=" + encodeURIComponent(message);
+
+                    window.open(waUrl, '_blank'); // Membuka WhatsApp di tab baru
+                }
+            });
+        });
+    </script>
+</body>
+</html
